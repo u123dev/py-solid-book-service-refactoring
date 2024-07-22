@@ -17,7 +17,6 @@ manage = {
 def main(book: Book, commands: list[tuple[str, str]]) -> None | str:
     for cmd, method_type in commands:
         if (action := manage.get(cmd, {}).get(method_type)):
-
             if (res := action()(book.title, book.content)):
                 return res
 
